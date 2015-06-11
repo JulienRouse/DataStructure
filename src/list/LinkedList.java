@@ -32,6 +32,7 @@ public class LinkedList<T> extends ListAbs<T> {
 			return ;
 		}
 		
+		
 		NodeSimple<T> newNode = new NodeSimple<T>(e);
 		NodeSimple<T> tmp = this.head;
 		for(int i=0;i<index-1;i++)
