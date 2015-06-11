@@ -4,7 +4,7 @@ import node.NodeSkip;
 
 public class SkipList<T> extends ListAbs<T> {
 
-	
+	//POUR LINSTANT PAS FAIT
 	NodeSkip<T> head[];
 	
 	@Override
