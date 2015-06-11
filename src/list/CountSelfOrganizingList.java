@@ -1,6 +1,7 @@
 package list;
 
 
+import node.NodeSimple;
 import node.NodeSimpleCount;
 
 public class CountSelfOrganizingList<T> extends SelfOrganizingList<T> {
@@ -38,6 +39,70 @@ public class CountSelfOrganizingList<T> extends SelfOrganizingList<T> {
  		nodeToChange.count++;
 	}
 
+	@Override
+	public void add(T e,int index)
+	{
+		if (index<0 || index>this.size())
+			throw new IndexOutOfBoundsException("Index is out of the list range: "+index);
+		
+		if(index==0)
+		{
+			this.prepend(e);
+			return ;
+		}
+		if(index==this.size())
+		{
+			this.append(e);
+			return ;
+		}
+		
+		
+		NodeSimpleCount<T> newNode = new NodeSimpleCount<T>(e);
+		NodeSimpleCount<T> tmp = this.head;
+		for(int i=0;i<index-1;i++)
+		{
+			tmp =  tmp.next;
+		}
+		newNode.next = tmp.next;
+		tmp.next = newNode;
+		this.size++;
+	}
+	
+	@Override
+	public void prepend(T e) {
+		NodeSimpleCount<T> newNode = new NodeSimpleCount<T>(e);
+		if (this.isEmpty())
+		{
+			this.head = newNode;
+			
+		}
+		else
+		{
+			newNode.next = this.head;
+			this.head = newNode;
+		}
+		this.size++;
+	}
+
+	@Override
+	public void append(T e) {
+		NodeSimpleCount<T> lastNode = this.head;
+		if(this.isEmpty())
+		{
+			prepend(e);
+		}
+		else
+		{
+			while(lastNode.next!=null)
+			{
+				lastNode = lastNode.next;
+			}
+			
+			lastNode.next = new NodeSimpleCount<T>(e);
+			this.size++;
+		}
+		
+	}
 	
 	
 }
