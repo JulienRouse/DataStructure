@@ -3,7 +3,9 @@ package main;
 // http://en.wikipedia.org/wiki/List_of_data_structures
 
 
+import tree.BinarySearchTree;
 import list.CountSelfOrganizingList;
+import list.LinkedList;
 import list.MTFSelfOrganizingList;
 import list.SelfOrganizingList;
 import list.TransposeSelfOrganizingList;
@@ -13,7 +15,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-	/*	UnrolledLinkedList<Integer> l2 = new UnrolledLinkedList<Integer>();
+		/*LinkedList<Integer> l2 = new LinkedList<Integer>();
 		UnrolledLinkedList<Integer> l = new UnrolledLinkedList<Integer>();
 		l.prepend(7);
 		l2.prepend(7);
@@ -27,11 +29,16 @@ public class Main {
 		System.out.println(l);
 		
 		for(int i=0;i<100;i++)
+		{
 			l.prepend(i);
+			l2.prepend(i);
+		}
 		System.out.println(l);
+		System.out.println(l2);
 		*/
 		
-		SelfOrganizingList<Integer> l = new CountSelfOrganizingList<Integer>();
+		/*
+		SelfOrganizingList<Integer> l = new MTFSelfOrganizingList<Integer>();
 		for(int i=0;i<10;i++)
 			l.append(i);
 		System.out.println(l);
@@ -40,6 +47,13 @@ public class Main {
 			l.get(4);
 			System.out.println(l);
 		}
-	}
+		*/
+		
+		/*
+		BinarySearchTree<String> t = new BinarySearchTree<String>("toto");
+		
+		System.out.println("toto".compareTo("tott"));
+	*/
+		}
 
 }

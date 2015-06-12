@@ -4,14 +4,19 @@ package node;
 
 public class NodeBinarySearchTree<T extends Comparable<T>> {
 	
-	public T value;
+	public T key;
 	public NodeBinarySearchTree<T> left;
 	public NodeBinarySearchTree<T> right;
 	
 	public NodeBinarySearchTree(T e)
 	{
-		this.value = e;
+		this.key = e;
 		this.left=null;
 		this.right=null;
+	}
+	
+	public String toString()
+	{
+		return this.key.toString();
 	}
 }
