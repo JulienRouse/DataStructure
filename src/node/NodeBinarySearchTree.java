@@ -19,4 +19,31 @@ public class NodeBinarySearchTree<T extends Comparable<T>> {
 	{
 		return this.key.toString();
 	}
+
+	public String toString(int level) {
+		StringBuilder sb = new StringBuilder();
+		
+		for(int i=0;i<level;i++)
+			sb.append(" ");
+		sb.append(this.toString());
+		sb.append("\n");
+		
+		if(this.left!=null)
+			sb.append(this.left.toString(level+1));
+		else
+		{
+			for(int i=0;i<level+1;i++)
+				sb.append(" ");
+			sb.append("()\n");
+		}
+		if(this.right!=null)
+			sb.append(this.right.toString(level+1));
+		else
+		{
+			for(int i=0;i<level+1;i++)
+				sb.append(" ");
+			sb.append("()\n");
+		}
+		return sb.toString();
+	}
 }

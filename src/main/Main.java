@@ -49,11 +49,14 @@ public class Main {
 		}
 		*/
 		
-		/*
-		BinarySearchTree<String> t = new BinarySearchTree<String>("toto");
 		
-		System.out.println("toto".compareTo("tott"));
-	*/
+		BinarySearchTree<Integer> t = new BinarySearchTree<Integer>(5);
+		t.insert(4);
+		t.insert(6);
+		t.insert(3);
+		System.out.println(t);
+	
+		
 		}
 
 }
